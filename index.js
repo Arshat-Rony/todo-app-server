@@ -27,7 +27,6 @@ async function run() {
         // send data to the server 
         app.post('/notes', async (req, res) => {
             const note = req.body;
-            console.log(note)
             const result = await noteCollection.insertOne(note)
             res.send(result)
         })
