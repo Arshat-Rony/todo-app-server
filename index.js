@@ -35,9 +35,9 @@ async function run() {
 
 
         // get the data according to the user
-        app.get('/notes', async (req, res) => {
-            // const email = req.params.email;
-            // const query = { email: email }
+        app.get('/notes/:email', async (req, res) => {
+            const email = req.params.email;
+            const query = { email: email }
             const result = await noteCollection.find({}).toArray()
             res.send(result)
         })
